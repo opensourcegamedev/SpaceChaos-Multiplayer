@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<artifactId>spacechaos-multiplayer</artifactId>
 		<groupId>de.spacechaos</groupId>
@@ -23,6 +22,13 @@
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx</artifactId>
+			<version>${libgdx.version}</version>
+		</dependency>
+
+		<!-- Box2D -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-box2d</artifactId>
 			<version>${libgdx.version}</version>
 		</dependency>
 
@@ -64,6 +70,35 @@
 			<artifactId>gdx-freetype</artifactId>
 			<version>${libgdx.version}</version>
 		</dependency>
+
+		<!-- aretmis odb -->
+		<dependency>
+			<groupId>net.onedaybeard.artemis</groupId>
+			<artifactId>artemis-odb</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- apache commons io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<!-- guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>24.0-jre</version>
+		</dependency>
+
+		<!-- libgdx-utils -->
+		<dependency>
+			<groupId>net.dermetfan.libgdx-utils</groupId>
+			<artifactId>libgdx-utils</artifactId>
+			<version>0.13.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
