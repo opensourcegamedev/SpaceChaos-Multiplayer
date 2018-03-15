@@ -1,6 +1,6 @@
 package de.spacechaos.desktop;
 
-public class Main {
+public class DesktopLauncher {
 
     public static void main (String[] args) {
         //
