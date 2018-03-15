@@ -11,5 +11,143 @@
 
 	<artifactId>Desktop</artifactId>
 
+	<properties>
+		<mainClass>de.spacechaos.desktop.DesktopLauncher</mainClass>
+	</properties>
+
+	<dependencies>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+		<!-- game module -->
+		<dependency>
+			<groupId>de.spacechaos</groupId>
+			<artifactId>SpaceChaos-Client</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- libGDX LWJGL Backend -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-backend-lwjgl3</artifactId>
+			<version>${libgdx.version}</version>
+		</dependency>
+
+		<!-- libGDX platform natives -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-platform</artifactId>
+			<version>${libgdx.version}</version>
+			<classifier>natives-desktop</classifier>
+		</dependency>
+
+		<!-- libGDX tools -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-tools</artifactId>
+			<version>${libgdx.version}</version>
+		</dependency>
+
+		<!-- libGDX fonts -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-freetype-platform</artifactId>
+			<version>${libgdx.version}</version>
+			<classifier>natives-desktop</classifier>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- set Java version -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- copy dependencies to lib directory -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<useBaseVersion>false</useBaseVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- create jar artifact, add classpath and set main class -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>${mainClass}</mainClass>
+
+							<!-- update dependencie versions in MANIFEST.MF -->
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+						<manifestEntries>
+							<!-- https://www.youtube.com/watch?v=Rnmq_Jv-pe4 -->
+							<!-- http://www.javacreed.com/how-to-add-splash-screen-using-maven/ -->
+							<!-- <SplashScreen-Image>splash_screen.png</SplashScreen-Image> -->
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- create zip archive -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>${mainClass}</mainClass>
+						</manifest>
+					</archive>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 
 </project>
