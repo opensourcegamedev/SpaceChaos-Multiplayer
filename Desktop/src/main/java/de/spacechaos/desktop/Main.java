@@ -1,4 +1,4 @@
-package de.spacechaos.client;
+package de.spacechaos.desktop;
 
 public class Main {
 
