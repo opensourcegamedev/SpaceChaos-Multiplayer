@@ -3,6 +3,15 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/opensourcegamedev/SpaceChaos-Multiplayer.png?columns=Inbox,Next,In%20Progress,Done)](https://waffle.io/opensourcegamedev/SpaceChaos-Multiplayer?utm_source=badge)
 [![Build Status](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer.svg?branch=master)](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer)
 
+[![Lines of Code](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=lines)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Lines of Code](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=ncloc)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=de.spacechaos%3Aspacechaos-multiplayer)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Coverage](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=coverage)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Technical Debt Rating](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![JUnit Tests Rating](https://sonarcloud.io/api/badges/measure?key=com.jukusoft.mmo%3Ammorpg-client&metric=test_success_density)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Security Rating](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=new_security_rating)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+
+
 Im Rahmen dieses Projekts wollen wir einen Multiplayer-Modus für unser [voriges Projekt](https://github.com/opensourcegamedev/SpaceChaos) entwickeln.  Dabei ist der Weg das Ziel - wir entwickeln das Projekt hauptsächlich, um uns mit verschiedenen Programmieransätzen und Problematiken auseinanderzusetzen.
 
 ![SpaceChaos Logo](./core/assets/ui/backgrounds/splashscreen.png)
