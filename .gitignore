@@ -5,7 +5,7 @@
 !.gitignore
 !.travis.yml
 
-sonarcloud.cfg
+local-sonarcloud.cfg
 *sonarcloud.cfg
 
 ### Windows ###
