@@ -6,6 +6,8 @@ import java.nio.charset.Charset;
 
 import org.apache.commons.io.FileUtils;
 
+import com.badlogic.gdx.Gdx;
+
 /**
  * This class holds utility methods for dealing with crash logs.
  * 
@@ -45,7 +47,7 @@ public class CrashLogUtils {
         try {
             FileUtils.writeStringToFile(CRASH_LOG_FILE, e.getLocalizedMessage(), CHARSET, true);
         } catch (IOException e1) {
-            e1.printStackTrace();
+            Gdx.app.error("SpaceChaos", "An error occurred saving the crash log", e);
         }
 
         if (forceExit)
