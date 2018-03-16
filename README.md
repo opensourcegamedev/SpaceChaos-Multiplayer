@@ -2,7 +2,6 @@
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/opensourcegamedev/SpaceChaos-Multiplayer.png?columns=Inbox,Next,In%20Progress,Done)](https://waffle.io/opensourcegamedev/SpaceChaos-Multiplayer?utm_source=badge)
 [![Build Status](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer.svg?branch=master)](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer)
-
 [![Lines of Code](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=lines)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![Lines of Code](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=ncloc)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=de.spacechaos%3Aspacechaos-multiplayer)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
