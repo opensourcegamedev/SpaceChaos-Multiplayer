@@ -85,7 +85,7 @@
 			<version>2.6</version>
 		</dependency>
 
-		<!-- guava -->
+		<!-- guava for the event bus -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>

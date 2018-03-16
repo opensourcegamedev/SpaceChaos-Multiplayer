@@ -24,7 +24,7 @@ public abstract class GameSession {
     /**
      * Used to calculate the time delta.
      */
-    private long lastTime = System.currentTimeMillis(), currentTime;
+    private long lastTime = System.currentTimeMillis();
     private boolean initialized = false;
     private com.artemis.World entityWorld;
     private com.badlogic.gdx.physics.box2d.World physicsWorld;
@@ -78,7 +78,7 @@ public abstract class GameSession {
     public void update() {
         if (!initialized)
             throw new IllegalStateException("The game session has to get initialized first!");
-        currentTime = System.currentTimeMillis();
+        long currentTime = System.currentTimeMillis();
         long delta = currentTime - lastTime;
         lastTime = currentTime;
 

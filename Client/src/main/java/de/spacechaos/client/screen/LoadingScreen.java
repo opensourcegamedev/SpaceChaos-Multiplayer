@@ -29,7 +29,6 @@ public class LoadingScreen extends BaseScreen {
     @Asset(Texture.class)
     private static final String BAR_BLUE_TEXTURE_PATH = "ui/images/bar-bottom.png";
     private Texture backgroundTexture;
-    private Texture logoTexture;
     private Texture orangeBarTexture;
     private Texture blueBarTexture;
     private float progress;
@@ -63,8 +62,8 @@ public class LoadingScreen extends BaseScreen {
         return new AssetDescriptor<BitmapFont>("handwrittenFont20.ttf", BitmapFont.class, font);
     }
 
-    private final String SKIN_PATH = "ui/skin/skin.json";
-    private final String SKIN_TEXTURE_ATLAS_PATH = "ui/skin/skin.atlas";
+    private static final String SKIN_PATH = "ui/skin/skin.json";
+    private static final String SKIN_TEXTURE_ATLAS_PATH = "ui/skin/skin.atlas";
 
     @Override
     protected void onInit() {
@@ -123,7 +122,7 @@ public class LoadingScreen extends BaseScreen {
         BitmapFont letter20Font = assetManager.get(LETTER_FONT_20_PATH());
         BitmapFont handwritten20Font = assetManager.get(HANDWRITTEN_FONT_20_PATH());
 
-        ObjectMap<String, Object> fontMap = new ObjectMap<String, Object>();
+        ObjectMap<String, Object> fontMap = new ObjectMap<>();
         fontMap.put("main-19", main19Font);
         fontMap.put("main-22", main22Font);
         fontMap.put("letter-20", letter20Font);

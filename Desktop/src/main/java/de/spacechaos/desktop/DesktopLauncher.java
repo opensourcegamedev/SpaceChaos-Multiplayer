@@ -1,6 +1,7 @@
 package de.spacechaos.desktop;
 
 import com.badlogic.gdx.Files;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
@@ -56,7 +57,7 @@ public class DesktopLauncher {
             // Start the game
             new LwjglApplication(new SpaceChaosMultiplayerGame(options.has("debug"), !options.has("novid")), config);
         } catch (Exception e) {
-            e.printStackTrace();
+            Gdx.app.error("SpaceChaos", "An unexpected error occurred starting the game", e);
 
             CrashLogUtils.writeCrashLogToFile(e, true);
         }

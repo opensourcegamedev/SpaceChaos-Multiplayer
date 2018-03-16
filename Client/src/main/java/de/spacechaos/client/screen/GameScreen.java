@@ -29,14 +29,6 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void show() {
-        game.getInputMultiplexer().addProcessor(new DefaultInputProcessor() {
-            @Override
-            public boolean keyDown(int keycode) {
-                System.out.println("Key pressed");
-
-                return true;
-            }
-        });
         game.getInputMultiplexer().addProcessor(gameInputProcessor);
         game.getEventBus().register(this);
         // TODO Event Bus f�r Chat-Nachrichten, etc. benutzen

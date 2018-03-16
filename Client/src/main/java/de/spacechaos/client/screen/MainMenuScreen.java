@@ -3,12 +3,10 @@ package de.spacechaos.client.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import net.dermetfan.gdx.assets.AnnotationAssetManager.Asset;
 
@@ -18,13 +16,11 @@ import net.dermetfan.gdx.assets.AnnotationAssetManager.Asset;
 public class MainMenuScreen extends BaseUIScreen {
 
     @Asset(Texture.class)
-    private final String BACKGROUND_IMAGE_PATH = "ui/backgrounds/castle.jpg";
+    private static final String BACKGROUND_IMAGE_PATH = "ui/backgrounds/castle.jpg";
     @Asset(Texture.class)
-    private final String LOGO_IMAGE_PATH = "ui/images/logo.png";
+    private static final String LOGO_IMAGE_PATH = "ui/images/logo.png";
     @Asset(Sound.class)
-    private final String BUTTON_SOUND = "audio/button-tick.mp3";
-    private int xPos;
-    private int yPos;
+    private static final String BUTTON_SOUND = "audio/button-tick.mp3";
 
     @Override
     protected void initUI() {
@@ -33,6 +29,7 @@ public class MainMenuScreen extends BaseUIScreen {
 
         ImageTextButton multiplayerButton = new ImageTextButton("Multiplayer", skin);
         multiplayerButton.addListener(new InputListener() {
+            @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 clickSound.play(1F);
                 // game.pushScreen("serverBrowser");
@@ -42,6 +39,7 @@ public class MainMenuScreen extends BaseUIScreen {
 
         ImageTextButton settingsButton = new ImageTextButton("Einstellungen", skin);
         settingsButton.addListener(new InputListener() {
+            @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 clickSound.play(1F);
 
@@ -52,6 +50,7 @@ public class MainMenuScreen extends BaseUIScreen {
 
         ImageTextButton exitButton = new ImageTextButton("Beenden", skin);
         exitButton.addListener(new InputListener() {
+            @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 clickSound.play(1F);
 

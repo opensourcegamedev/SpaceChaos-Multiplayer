@@ -35,6 +35,7 @@ import de.spacechaos.client.screen.SplashScreen;
 import de.spacechaos.client.setting.GameSettings;
 import de.spacechaos.client.util.CursorManager;
 import net.dermetfan.gdx.assets.AnnotationAssetManager;
+import static com.badlogic.gdx.Gdx.app;
 
 /**
  * This class starts the game by creating all the necessary screens and then
@@ -56,8 +57,8 @@ public class SpaceChaosMultiplayerGame extends Game {
      */
     private Map<String, BaseScreen> screens = new ConcurrentHashMap<>();
 
-    private static int viewportWidth;
-    private static int viewportHeight;
+    private int viewportWidth;
+    private int viewportHeight;
 
     private OrthographicCamera uiCamera;
     private CameraWrapper gameCamera;
@@ -89,9 +90,9 @@ public class SpaceChaosMultiplayerGame extends Game {
     @Override
     public final void create() {
         if (debug)
-            Gdx.app.setLogLevel(Gdx.app.LOG_DEBUG);
+            Gdx.app.setLogLevel(app.LOG_DEBUG);
         else
-            Gdx.app.setLogLevel(Gdx.app.LOG_INFO);
+            Gdx.app.setLogLevel(app.LOG_INFO);
 
         // Initialize sprite batch
         this.batch = new SpriteBatch();
@@ -106,11 +107,11 @@ public class SpaceChaosMultiplayerGame extends Game {
 
         // Initialize cameras
         this.uiCamera = new OrthographicCamera(viewportWidth, viewportHeight);
-        this.uiCamera.translate(viewportWidth / 2, viewportHeight / 2, 0);
+        this.uiCamera.translate(viewportWidth / 2F, viewportHeight / 2F, 0);
         this.uiCamera.update();
 
         this.gameCamera = new CameraWrapper(new PerspectiveCamera(67, viewportWidth, viewportHeight));
-        this.gameCamera.translate(viewportWidth / 2, viewportHeight / 2, 0);
+        this.gameCamera.translate(viewportWidth / 2F, viewportHeight / 2F, 0);
         // this.camera.update();
         this.batch.setProjectionMatrix(this.gameCamera.getCamera().combined);
 
