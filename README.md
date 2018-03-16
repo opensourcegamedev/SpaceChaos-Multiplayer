@@ -1,8 +1,8 @@
 # SpaceChaos Multiplayer
 
 [![Build Status](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer.svg?branch=master)](https://travis-ci.org/opensourcegamedev/SpaceChaos-Multiplayer)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/opensourcegamedev/SpaceChaos-Multiplayer.png?columns=Inbox,Next,In%20Progress,Done)](https://waffle.io/opensourcegamedev/SpaceChaos-Multiplayer?utm_source=badge)
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=de.spacechaos%3Aspacechaos-multiplayer)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/opensourcegamedev/SpaceChaos-Multiplayer.png?columns=Inbox,Next,In%20Progress,Done)](https://waffle.io/opensourcegamedev/SpaceChaos-Multiplayer?utm_source=badge)
 [![Coverage](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=coverage)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![Technical Debt Rating](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![JUnit Tests Rating](https://sonarcloud.io/api/badges/measure?key=com.jukusoft.mmo%3Ammorpg-client&metric=test_success_density)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
