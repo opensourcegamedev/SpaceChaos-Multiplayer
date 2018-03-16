@@ -5,6 +5,9 @@
 !.gitignore
 !.travis.yml
 
+sonarcloud.cfg
+*sonarcloud.cfg
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db
