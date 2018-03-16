@@ -3,7 +3,6 @@ package de.spacechaos.client.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
-import de.spacechaos.client.input.DefaultInputProcessor;
 import de.spacechaos.client.input.GameInputProcessor;
 
 /**
