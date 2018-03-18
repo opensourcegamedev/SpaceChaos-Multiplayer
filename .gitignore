@@ -8,6 +8,9 @@
 local-sonarcloud.cfg
 *sonarcloud.cfg
 
+*sonargraph
+SpaceChaos-Multiplayer.sonargraph
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db
