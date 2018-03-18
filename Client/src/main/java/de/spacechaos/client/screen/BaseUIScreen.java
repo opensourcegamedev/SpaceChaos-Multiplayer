@@ -88,7 +88,7 @@ public abstract class BaseUIScreen extends BaseScreen {
 
     @Override
     public void hide() {
-        game.getInputMultiplexer().removeInputProcessors();
+        game.getInputMultiplexer().clear();
     }
 
     @Override

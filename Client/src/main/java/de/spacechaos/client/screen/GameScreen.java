@@ -35,7 +35,7 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void hide() {
-        game.getInputMultiplexer().removeInputProcessors();
+        game.getInputMultiplexer().clear();
         game.getEventBus().register(this);
     }
 

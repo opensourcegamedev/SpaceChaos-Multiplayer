@@ -1,11 +1,14 @@
 package de.spacechaos.client.core;
 
+import static com.badlogic.gdx.Gdx.app;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
@@ -22,7 +25,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.google.common.eventbus.EventBus;
 
 import de.spacechaos.client.camera.CameraWrapper;
-import de.spacechaos.client.input.GameInputMultiplexer;
 import de.spacechaos.client.screen.BaseScreen;
 import de.spacechaos.client.screen.BaseUIScreen;
 import de.spacechaos.client.screen.LoadingScreen;
@@ -35,7 +37,6 @@ import de.spacechaos.client.screen.SplashScreen;
 import de.spacechaos.client.setting.GameSettings;
 import de.spacechaos.client.util.CursorManager;
 import net.dermetfan.gdx.assets.AnnotationAssetManager;
-import static com.badlogic.gdx.Gdx.app;
 
 /**
  * This class starts the game by creating all the necessary screens and then
@@ -69,7 +70,7 @@ public class SpaceChaosMultiplayerGame extends Game {
 
     private boolean debug, showSplashscreen;
 
-    private GameInputMultiplexer inputProcessor = new GameInputMultiplexer();
+    private InputMultiplexer inputProcessor = new InputMultiplexer();
 
     private Skin uiSkin;
 
@@ -318,7 +319,7 @@ public class SpaceChaosMultiplayerGame extends Game {
      * 
      * @return The game's input multiplexer.
      */
-    public GameInputMultiplexer getInputMultiplexer() {
+    public InputMultiplexer getInputMultiplexer() {
         return inputProcessor;
     }
 
