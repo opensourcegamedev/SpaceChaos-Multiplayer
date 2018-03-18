@@ -18,7 +18,7 @@ public class SplashScreen extends BaseScreen {
     private int yPos;
 
     @Asset(Texture.class)
-    private final String TITLE_IMAGE_PATH = "ui/images/title.png";
+    private static final String TITLE_IMAGE_PATH = "ui/images/title.png";
 
     @Override
     protected void onInit() {

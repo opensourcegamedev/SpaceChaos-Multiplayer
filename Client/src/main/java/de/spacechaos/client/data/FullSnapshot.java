@@ -1,8 +1,5 @@
 package de.spacechaos.client.data;
 
-import java.util.HashMap;
-import java.util.List;
-
 /**
  * This class is a full snapshot of a match and therefore holds all the
  * information necessary to set up the game on the client. It is only sent once

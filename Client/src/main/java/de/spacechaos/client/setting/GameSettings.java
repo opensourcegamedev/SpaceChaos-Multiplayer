@@ -6,9 +6,9 @@ package de.spacechaos.client.setting;
 public class GameSettings {
 
     private final ConfigHandler configHandler;
-    private final String MASTER_VOLUME = "masterVolume";
-    private final String EFFECT_VOLUME = "effectVolume";
-    private final String MUSIC_VOLUME = "musicVolume";
+    private static final String MASTER_VOLUME = "masterVolume";
+    private static final String EFFECT_VOLUME = "effectVolume";
+    private static final String MUSIC_VOLUME = "musicVolume";
 
     /**
      * @param fileName

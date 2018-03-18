@@ -3,7 +3,6 @@ package de.spacechaos.client.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
-import de.spacechaos.client.input.DefaultInputProcessor;
 import de.spacechaos.client.input.GameInputProcessor;
 
 /**
@@ -29,14 +28,6 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void show() {
-        game.getInputMultiplexer().addProcessor(new DefaultInputProcessor() {
-            @Override
-            public boolean keyDown(int keycode) {
-                System.out.println("Key pressed");
-
-                return true;
-            }
-        });
         game.getInputMultiplexer().addProcessor(gameInputProcessor);
         game.getEventBus().register(this);
         // TODO Event Bus f�r Chat-Nachrichten, etc. benutzen
@@ -44,7 +35,7 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void hide() {
-        game.getInputMultiplexer().removeInputProcessors();
+        game.getInputMultiplexer().clear();
         game.getEventBus().register(this);
     }
 
