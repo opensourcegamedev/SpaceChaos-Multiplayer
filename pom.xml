@@ -54,6 +54,13 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>hello2morrow.maven.repository</id>
+			<url>http://maven.hello2morrow.com/repository</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<dependencies>
 		<!-- JUnit tests -->
 		<dependency>
@@ -90,6 +97,24 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- <plugin>
+				<groupId>com.hello2morrow.sonargraph</groupId>
+				<artifactId>maven-sonargraph-plugin</artifactId>
+				<version>7.2.0</version>
+				<configuration>
+					<useSonargraphWorkspace>true</useSonargraphWorkspace>
+					<file>System.sonargraph</file>
+				</configuration>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>architect-report-verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
 		</plugins>
 	</build>
 

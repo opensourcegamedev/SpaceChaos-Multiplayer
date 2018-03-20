@@ -113,6 +113,24 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+
+			<!-- <plugin>
+				<groupId>com.hello2morrow.sonargraph</groupId>
+				<artifactId>maven-sonargraph-plugin</artifactId>
+				<version>7.2.0</version>
+				<configuration>
+					<useSonargraphWorkspace>true</useSonargraphWorkspace>
+					<file>System.sonargraph</file>
+				</configuration>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>architect-report-verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
 		</plugins>
 	</build>
 
