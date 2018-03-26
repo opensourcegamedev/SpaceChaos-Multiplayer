@@ -14,7 +14,7 @@ import de.spacechaos.client.setting.GameSettings;
 public class ConfigHandlerTest extends GameUnitTest {
 
     @Test
-    public void testHandler() {
+    public void testBasics() {
         final float floatValue = 2;
         final int intValue = 3;
         final String stringValue = "4";
@@ -37,5 +37,23 @@ public class ConfigHandlerTest extends GameUnitTest {
 
         assertEquals(floatValue * 2, cfg.getFloat(floatKey), 0.001F);
         assertEquals(intValue * 2, cfg.getInt(intKey));
+
+    }
+
+    @Test
+    public void testDefaults() {
+        final float floatValue = 2;
+        final int intValue = 3;
+        final String stringValue = "4";
+
+        final String floatKey = "aa";
+        final String intKey = "bb";
+        final String stringKey = "cc";
+
+        ConfigHandler cfg = new ConfigHandler("XYZ");
+
+        assertEquals(floatValue, cfg.getFloat(floatKey, floatValue), 0);
+        assertEquals(intValue, cfg.getInt(intKey, intValue));
+        assertEquals(stringValue, cfg.getString(stringKey, stringValue));
     }
 }

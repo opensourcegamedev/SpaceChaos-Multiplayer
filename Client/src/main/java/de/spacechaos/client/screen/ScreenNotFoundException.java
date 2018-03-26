@@ -1,5 +1,7 @@
 package de.spacechaos.client.screen;
 
+import de.spacechaos.client.core.SpaceChaosMultiplayerGame;
+
 /**
  * Thrown when a pushed {@linkplain BaseScreen screen} is not found.
  * 
