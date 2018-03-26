@@ -51,6 +51,14 @@ public class DataStore {
      * @return true if data store contains mapping for specified tag
      */
     public boolean contains(String key) {
+        if (key == null) {
+            throw new NullPointerException("Key cannot be null.");
+        }
+
+        if (key.isEmpty()) {
+            throw new IllegalArgumentException("Key cannot be empty.");
+        }
+
         return this.data.containsKey(key);
     }
 
@@ -63,6 +71,14 @@ public class DataStore {
      * @return The value or null if the key wasn't added before.
      */
     public Object get(String key) {
+        if (key == null) {
+            throw new NullPointerException("Key cannot be null.");
+        }
+
+        if (key.isEmpty()) {
+            throw new IllegalArgumentException("Key cannot be empty.");
+        }
+
         return this.data.get(key);
     }
 
@@ -78,6 +94,14 @@ public class DataStore {
      * @return The value or null if the key wasn't added before.
      */
     public <T> T get(String key, Class<T> clazz) {
+        if (key == null) {
+            throw new NullPointerException("Key cannot be null.");
+        }
+
+        if (key.isEmpty()) {
+            throw new IllegalArgumentException("Key cannot be empty.");
+        }
+
         Object obj = this.get(key);
 
         if (obj == null) {
