@@ -1,7 +1,9 @@
 package de.spacechaos.client.settings;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
+import de.spacechaos.client.GameUnitTest;
 import org.junit.Test;
 
 import de.spacechaos.client.setting.GameSettings;
@@ -9,7 +11,7 @@ import de.spacechaos.client.setting.GameSettings;
 /**
  * Tests the {@link GameSettings} class.
  */
-public class SettingsTest {
+public class SettingsTest extends GameUnitTest {
 
     @Test
     public void testHandler() {
@@ -24,9 +26,9 @@ public class SettingsTest {
         settings1.setMusicVolume(musicVolume);
 
         GameSettings settings2 = new GameSettings("xyz");
-        assertSame(masterVolume, settings2.getEffectVolume());
-        assertSame(effectVolume, settings2.getEffectVolume());
-        assertSame(musicVolume, settings2.getEffectVolume());
+        assertEquals(masterVolume, settings2.getMasterVolume(), 0);
+        assertEquals(effectVolume, settings2.getEffectVolume(), 0);
+        assertEquals(musicVolume, settings2.getMusicVolume(), 0);
 
     }
 
