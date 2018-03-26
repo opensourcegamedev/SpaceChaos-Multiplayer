@@ -35,10 +35,6 @@ public class DataStore {
             throw new IllegalArgumentException("Key cannot be empty.");
         }
 
-        if (data == null) {
-            throw new NullPointerException("Data cannot be null.");
-        }
-
         this.data.put(key, data);
     }
 
