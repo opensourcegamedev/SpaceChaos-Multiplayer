@@ -76,5 +76,11 @@ public class DataStoreTest {
         DataStore store = new DataStore();
         store.get("", String.class);
     }
+    
+    @Test(expected = NullPointerException.class)
+    public void testNPE() {
+        DataStore store = new DataStore();
+        store.put("abc", null);
+    }
 
 }

@@ -13,7 +13,7 @@ public class DataStore {
 
     private static final String KEY_CANNOT_BE_NULL_MSG = "Key cannot be null.";
     private static final String KEY_CANNOT_BE_EMPTY_MSG = "Key cannot be empty.";
-    private static final String DATA_CANNOT_BE_EMPTY_MSG = "Data cannot be empty.";
+    private static final String DATA_CANNOT_BE_NULL_MSG = "Data cannot be null.";
 
     /**
      * The hashmap containing the data.
@@ -38,9 +38,9 @@ public class DataStore {
         if (key.isEmpty()) {
             throw new IllegalArgumentException(KEY_CANNOT_BE_EMPTY_MSG);
         }
-        
+
         if (data == null) {
-            throw new IllegalArgumentException(DATA_CANNOT_BE_EMPTY_MSG);
+            throw new NullPointerException(DATA_CANNOT_BE_NULL_MSG);
         }
 
         this.data.put(key, data);
