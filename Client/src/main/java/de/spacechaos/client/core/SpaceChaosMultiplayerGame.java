@@ -81,7 +81,7 @@ public class SpaceChaosMultiplayerGame extends Game {
     }
 
     @Override
-    public final void create() {
+    public void create() {
         if (debug)
             Gdx.app.setLogLevel(Application.LOG_DEBUG);
         else
