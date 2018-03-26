@@ -10,7 +10,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.headless.HeadlessApplication;
 import com.badlogic.gdx.graphics.GL20;
 
-public class GameTest {
+/**
+ * This class is the base class for all game tests. It takes care of starting
+ * the game headlessly.
+ */
+public abstract class GameTest {
     private static Application application;
 
     @BeforeClass
