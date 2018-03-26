@@ -18,12 +18,12 @@ public class GameInputProcessorTest {
         GameInputProcessor in = new GameInputProcessor();
 
         // A
-        in.keyDown(Input.Keys.A);
+        assertTrue(in.keyDown(Input.Keys.A));
         assertTrue(in.isLeftPressed());
         in.keyUp(Input.Keys.A);
         assertTrue(!in.isLeftPressed());
         // LEFT
-        in.keyDown(Input.Keys.LEFT);
+        assertTrue(in.keyDown(Input.Keys.LEFT));
         assertTrue(in.isLeftPressed());
         in.keyUp(Input.Keys.LEFT);
         assertTrue(!in.isLeftPressed());
@@ -82,9 +82,9 @@ public class GameInputProcessorTest {
         assertNotEquals(in.isEscapeJustPressed(), in.isEscapePressed());
 
         // LEFT MOUSE
-        in.touchDown(0, 0, 0, Input.Buttons.LEFT);
+        assertTrue(!in.touchDown(0, 0, 0, Input.Buttons.LEFT));
         assertTrue(in.isLeftMouseButtonPressed());
-        in.touchUp(0, 0, 0, Input.Buttons.LEFT);
+        assertTrue(in.touchUp(0, 0, 0, Input.Buttons.LEFT));
         assertTrue(!in.isLeftMouseButtonPressed());
 
         // RIGHT MOUSE
