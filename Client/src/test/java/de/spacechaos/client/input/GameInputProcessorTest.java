@@ -109,6 +109,10 @@ public class GameInputProcessorTest {
 
         // MISC
         assertEquals(in.mouseMoved(1, 2), in.touchDragged(1, 2, 3));
+        assertTrue(in.keyDown(Input.Keys.ALT_LEFT));
+        assertTrue(in.keyUp(Input.Keys.ALT_LEFT));
+        assertTrue(in.touchDown(0, 0, 0, Input.Keys.ALT_LEFT));
+        assertTrue(in.touchUp(0, 0, 0, Input.Keys.ALT_LEFT));
 
     }
 
