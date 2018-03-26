@@ -7,8 +7,6 @@ import org.junit.Test;
 
 import com.badlogic.gdx.graphics.Color;
 
-import de.spacechaos.client.data.DataStore;
-
 /**
  * Tests the {@link DataStore} class.
  */
@@ -25,6 +23,54 @@ public class DataStoreTest {
         store.put(key, value);
         assertTrue(store.contains(key));
         assertSame(value, store.get(key));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testNPE1() {
+        DataStore store = new DataStore();
+        store.put(null, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIAE1() {
+        DataStore store = new DataStore();
+        store.put("", null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testNPE2() {
+        DataStore store = new DataStore();
+        store.contains(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIAE2() {
+        DataStore store = new DataStore();
+        store.contains("");
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testNPE3() {
+        DataStore store = new DataStore();
+        store.get(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIAE3() {
+        DataStore store = new DataStore();
+        store.get("");
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testNPE4() {
+        DataStore store = new DataStore();
+        store.get(null, String.class);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIAE4() {
+        DataStore store = new DataStore();
+        store.get("", String.class);
     }
 
 }

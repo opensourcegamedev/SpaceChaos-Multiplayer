@@ -17,9 +17,9 @@ public class DataStore {
     protected Map<String, Object> data = new ConcurrentHashMap<>();
 
     /**
-     * Associates the specified data with the specified key in this store. If
-     * the data store previously contained a mapping for the key, the old data
-     * is replaced by the specified data.
+     * Associates the specified data with the specified key in this store. If the
+     * data store previously contained a mapping for the key, the old data is
+     * replaced by the specified data.
      * 
      * @param key
      *            The key.
@@ -59,8 +59,8 @@ public class DataStore {
     }
 
     /**
-     * Returns the value to which the specified key is mapped, or null if this
-     * data store contains no mapping for the key.
+     * Returns the value to which the specified key is mapped, or null if this data
+     * store contains no mapping for the key.
      * 
      * @param key
      *            The key.
@@ -79,9 +79,8 @@ public class DataStore {
     }
 
     /**
-     * Returns the value to which the specified key is mapped already casted to
-     * the specified class, or null if this data store contains no mapping for
-     * the key.
+     * Returns the value to which the specified key is mapped already casted to the
+     * specified class, or null if this data store contains no mapping for the key.
      * 
      * @param key
      *            The key.

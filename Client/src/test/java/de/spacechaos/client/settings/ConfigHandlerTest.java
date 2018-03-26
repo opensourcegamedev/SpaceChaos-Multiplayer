@@ -13,6 +13,16 @@ import de.spacechaos.client.setting.GameSettings;
  */
 public class ConfigHandlerTest extends GameUnitTest {
 
+    @Test(expected = NullPointerException.class)
+    public void testNPE() {
+        ConfigHandler cfg1 = new ConfigHandler(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIAE() {
+        ConfigHandler cfg2 = new ConfigHandler("");
+    }
+
     @Test
     public void testBasics() {
         final float floatValue = 2;
