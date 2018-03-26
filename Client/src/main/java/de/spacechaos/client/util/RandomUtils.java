@@ -1,11 +1,15 @@
 package de.spacechaos.client.util;
 
+import java.util.Random;
+
 /**
  * A few utility methods for dealing with random numbers and chances.
  * 
  * @author damios
  */
 public class RandomUtils {
+
+    private static Random random = new Random();
 
     private RandomUtils() {
     }
@@ -20,7 +24,7 @@ public class RandomUtils {
      * @return The random integer.
      */
     public static int getRandomNumber(int min, int max) {
-        return (int) (Math.random() * (max - min + 1)) + min;
+        return random.nextInt(max - min + 1) + min;
     }
 
     /**

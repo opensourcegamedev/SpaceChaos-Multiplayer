@@ -12,22 +12,22 @@ public class PositionConverter {
     }
 
     public static int toPhysicUnits(int pixels) {
-        // TODO
+        // TODO add the conversion logic
         return pixels;
     }
 
     public static Vector2 toPhysicUnits(Vector2 pixels) {
-        // TODO
+        // TODO add the conversion logic
         return pixels;
     }
 
     public static int toPixels(float physicsUnit) {
-        // TODO
+        // TODO add the conversion logic
         return (int) physicsUnit;
     }
 
     public static Vector2 toPixels(Vector2 physicsUnit) {
-        // TODO
+        // TODO add the conversion logic
         return physicsUnit;
     }
 

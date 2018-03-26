@@ -55,14 +55,17 @@ public class SplashScreen extends BaseScreen {
 
     @Override
     public void show() {
+        // unused
     }
 
     @Override
     public void hide() {
+        // unused
     }
 
     @Override
     public void dispose() {
+        // unused
     }
 
 }

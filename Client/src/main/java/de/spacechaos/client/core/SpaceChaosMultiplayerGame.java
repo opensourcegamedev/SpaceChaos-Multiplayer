@@ -1,10 +1,9 @@
 package de.spacechaos.client.core;
 
-import static com.badlogic.gdx.Gdx.app;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -24,18 +23,13 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.google.common.eventbus.EventBus;
 
-import de.spacechaos.client.camera.CameraWrapper;
 import de.spacechaos.client.screen.BaseScreen;
 import de.spacechaos.client.screen.BaseUIScreen;
 import de.spacechaos.client.screen.LoadingScreen;
-import de.spacechaos.client.screen.LobbyCreationScreen;
-import de.spacechaos.client.screen.LobbyScreen;
 import de.spacechaos.client.screen.MainMenuScreen;
 import de.spacechaos.client.screen.ScreenNotFoundException;
-import de.spacechaos.client.screen.ServerBrowserScreen;
 import de.spacechaos.client.screen.SplashScreen;
 import de.spacechaos.client.setting.GameSettings;
-import de.spacechaos.client.util.CursorManager;
 import net.dermetfan.gdx.assets.AnnotationAssetManager;
 
 /**
@@ -62,11 +56,9 @@ public class SpaceChaosMultiplayerGame extends Game {
     private int viewportHeight;
 
     private OrthographicCamera uiCamera;
-    private CameraWrapper gameCamera;
+    private PerspectiveCamera gameCamera;
 
     private GameSettings settings;
-
-    private CursorManager cursorManager;
 
     private boolean debug, showSplashscreen;
 
@@ -91,9 +83,9 @@ public class SpaceChaosMultiplayerGame extends Game {
     @Override
     public final void create() {
         if (debug)
-            Gdx.app.setLogLevel(app.LOG_DEBUG);
+            Gdx.app.setLogLevel(Application.LOG_DEBUG);
         else
-            Gdx.app.setLogLevel(app.LOG_INFO);
+            Gdx.app.setLogLevel(Application.LOG_INFO);
 
         // Initialize sprite batch
         this.batch = new SpriteBatch();
@@ -111,13 +103,10 @@ public class SpaceChaosMultiplayerGame extends Game {
         this.uiCamera.translate(viewportWidth / 2F, viewportHeight / 2F, 0);
         this.uiCamera.update();
 
-        this.gameCamera = new CameraWrapper(new PerspectiveCamera(67, viewportWidth, viewportHeight));
+        this.gameCamera = new PerspectiveCamera(67, viewportWidth, viewportHeight);
         this.gameCamera.translate(viewportWidth / 2F, viewportHeight / 2F, 0);
         // this.camera.update();
-        this.batch.setProjectionMatrix(this.gameCamera.getCamera().combined);
-
-        // Create new cursor manager
-        this.cursorManager = new CursorManager();
+        this.batch.setProjectionMatrix(this.gameCamera.combined);
 
         // Create the game's event bus
         this.eventBus = new EventBus();
@@ -132,9 +121,6 @@ public class SpaceChaosMultiplayerGame extends Game {
         addScreen("splash", new SplashScreen());
         addScreen("mainMenu", new MainMenuScreen());
         addScreen("loading", new LoadingScreen());
-        addScreen("serverBrowser", new ServerBrowserScreen());
-        addScreen("lobby", new LobbyScreen());
-        addScreen("lobbyCreation", new LobbyCreationScreen());
 
         // Push screen
         if (showSplashscreen)
@@ -159,12 +145,11 @@ public class SpaceChaosMultiplayerGame extends Game {
     }
 
     /**
-     * Pushes a screen to be the active screen. The screen has to be added to
-     * the game beforehand via {@link #addScreen(String, BaseScreen)}.
+     * Pushes a screen to be the active screen. The screen has to be added to the
+     * game beforehand via {@link #addScreen(String, BaseScreen)}.
      * <p>
      * {@link Screen#hide()} is called on the previously {@linkplain Game#screen
-     * active screen} and {@link Screen#show()} is called on the new active
-     * screen.
+     * active screen} and {@link Screen#show()} is called on the new active screen.
      * 
      * @param name
      *            The name of the pushed screen.
@@ -230,7 +215,7 @@ public class SpaceChaosMultiplayerGame extends Game {
     /**
      * @return The camera used in the actual game.
      */
-    public CameraWrapper getGameCamera() {
+    public PerspectiveCamera getGameCamera() {
         return this.gameCamera;
     }
 
@@ -264,10 +249,6 @@ public class SpaceChaosMultiplayerGame extends Game {
      */
     public Skin getUISkin() {
         return uiSkin;
-    }
-
-    public CursorManager getCursorManager() {
-        return this.cursorManager;
     }
 
     public SpriteBatch getSpriteBatch() {

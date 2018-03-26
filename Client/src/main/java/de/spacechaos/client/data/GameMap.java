@@ -7,7 +7,4 @@ package de.spacechaos.client.data;
  */
 public class GameMap {
 
-    public GameMap() {
-    }
-
 }
