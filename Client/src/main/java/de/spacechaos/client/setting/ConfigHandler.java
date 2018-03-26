@@ -185,7 +185,7 @@ public class ConfigHandler {
      * @param addition
      *            The amount to add.
      */
-    public void addFloat(String key, float addition) {
+    public void addToFloat(String key, float addition) {
         setFloat(key, addition + getFloat(key));
     }
 

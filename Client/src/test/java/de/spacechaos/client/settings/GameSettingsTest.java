@@ -11,10 +11,10 @@ import de.spacechaos.client.setting.GameSettings;
 /**
  * Tests the {@link GameSettings} class.
  */
-public class SettingsTest extends GameUnitTest {
+public class GameSettingsTest extends GameUnitTest {
 
     @Test
-    public void testHandler() {
+    public void test() {
         final float masterVolume = 2;
         final float effectVolume = 3;
         final float musicVolume = 4;
