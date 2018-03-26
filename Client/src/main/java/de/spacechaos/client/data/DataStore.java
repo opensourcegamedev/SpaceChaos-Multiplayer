@@ -11,6 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class DataStore {
 
+    private static final String KEY_CANNOT_BE_NULL_MSG = "Key cannot be null.";
+    private static final String KEY_CANNOT_BE_EMPTY_MSG = "Key cannot be empty.";
+
     /**
      * The hashmap containing the data.
      */
@@ -28,11 +31,11 @@ public class DataStore {
      */
     public void put(String key, Object data) {
         if (key == null) {
-            throw new NullPointerException("Key cannot be null.");
+            throw new NullPointerException(KEY_CANNOT_BE_NULL_MSG);
         }
 
         if (key.isEmpty()) {
-            throw new IllegalArgumentException("Key cannot be empty.");
+            throw new IllegalArgumentException(KEY_CANNOT_BE_EMPTY_MSG);
         }
 
         this.data.put(key, data);
@@ -48,11 +51,11 @@ public class DataStore {
      */
     public boolean contains(String key) {
         if (key == null) {
-            throw new NullPointerException("Key cannot be null.");
+            throw new NullPointerException(KEY_CANNOT_BE_NULL_MSG);
         }
 
         if (key.isEmpty()) {
-            throw new IllegalArgumentException("Key cannot be empty.");
+            throw new IllegalArgumentException(KEY_CANNOT_BE_EMPTY_MSG);
         }
 
         return this.data.containsKey(key);
@@ -68,11 +71,11 @@ public class DataStore {
      */
     public Object get(String key) {
         if (key == null) {
-            throw new NullPointerException("Key cannot be null.");
+            throw new NullPointerException(KEY_CANNOT_BE_NULL_MSG);
         }
 
         if (key.isEmpty()) {
-            throw new IllegalArgumentException("Key cannot be empty.");
+            throw new IllegalArgumentException(KEY_CANNOT_BE_EMPTY_MSG);
         }
 
         return this.data.get(key);
@@ -90,11 +93,11 @@ public class DataStore {
      */
     public <T> T get(String key, Class<T> clazz) {
         if (key == null) {
-            throw new NullPointerException("Key cannot be null.");
+            throw new NullPointerException(KEY_CANNOT_BE_NULL_MSG);
         }
 
         if (key.isEmpty()) {
-            throw new IllegalArgumentException("Key cannot be empty.");
+            throw new IllegalArgumentException(KEY_CANNOT_BE_EMPTY_MSG);
         }
 
         Object obj = this.get(key);
