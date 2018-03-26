@@ -12,6 +12,14 @@ public class ConfigHandler {
     private Preferences prefs;
 
     public ConfigHandler(String name) {
+        if (name == null) {
+            throw new NullPointerException("name is null.");
+        }
+
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException("name cannot be empty.");
+        }
+
         prefs = Gdx.app.getPreferences(name);
     }
 
