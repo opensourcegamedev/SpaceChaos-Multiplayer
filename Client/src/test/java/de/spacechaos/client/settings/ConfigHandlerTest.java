@@ -1,6 +1,7 @@
 package de.spacechaos.client.settings;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -35,6 +36,7 @@ public class ConfigHandlerTest extends GameUnitTest {
 
         ConfigHandler cfg = new ConfigHandler("XYZ");
         cfg.setFloat(floatKey, floatValue);
+        assertTrue(cfg.hasValue(floatKey));
         cfg.setInt(intKey, intValue);
         cfg.setString(stringKey, stringValue);
 
@@ -65,5 +67,9 @@ public class ConfigHandlerTest extends GameUnitTest {
         assertEquals(floatValue, cfg.getFloat(floatKey, floatValue), 0);
         assertEquals(intValue, cfg.getInt(intKey, intValue));
         assertEquals(stringValue, cfg.getString(stringKey, stringValue));
+
+        assertEquals(floatValue, cfg.getFloat(floatKey, floatValue * 2), 0);
+        assertEquals(intValue, cfg.getInt(intKey, intValue * 2));
+        assertEquals(stringValue, cfg.getString(stringKey, stringValue + "abc"));
     }
 }

@@ -1,12 +1,11 @@
 package de.spacechaos.client.input;
 
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.InputProcessor;
 
 /**
  * Takes care of translating the key strokes/mouse clicks into game values.
  */
-public class GameInputProcessor implements InputProcessor {
+public class GameInputProcessor implements DefaultInputProcessor {
 
     private boolean left, right, up, down;
     private boolean escape, space;
@@ -53,11 +52,6 @@ public class GameInputProcessor implements InputProcessor {
         }
 
         return true;
-    }
-
-    @Override
-    public boolean keyTyped(char character) {
-        return false;
     }
 
     public boolean isLeftPressed() {

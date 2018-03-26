@@ -1,5 +1,6 @@
 package de.spacechaos.client.data;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -23,6 +24,9 @@ public class DataStoreTest {
         store.put(key, value);
         assertTrue(store.contains(key));
         assertSame(value, store.get(key));
+        assertSame(value, store.get(key, Color.class));
+
+        assertNull(store.get("xya", String.class));
     }
 
     @Test(expected = NullPointerException.class)
