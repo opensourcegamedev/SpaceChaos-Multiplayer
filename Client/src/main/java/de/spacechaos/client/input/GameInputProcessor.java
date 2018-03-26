@@ -126,7 +126,7 @@ public class GameInputProcessor implements DefaultInputProcessor {
         } else if (button == Input.Buttons.RIGHT) {
             rightMouse = true;
         }
-        return false;
+        return true;
     }
 
     @Override

@@ -82,7 +82,7 @@ public class GameInputProcessorTest {
         assertNotEquals(in.isEscapeJustPressed(), in.isEscapeJustPressed());
 
         // LEFT MOUSE
-        assertTrue(!in.touchDown(0, 0, 0, Input.Buttons.LEFT));
+        assertTrue(in.touchDown(0, 0, 0, Input.Buttons.LEFT));
         assertTrue(in.isLeftMouseButtonPressed());
         assertTrue(in.touchUp(0, 0, 0, Input.Buttons.LEFT));
         assertTrue(!in.isLeftMouseButtonPressed());
