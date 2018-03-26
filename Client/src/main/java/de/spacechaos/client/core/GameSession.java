@@ -7,7 +7,6 @@ import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.Vector2;
 
-import de.spacechaos.client.data.FullSnapshot;
 import de.spacechaos.client.data.GameSessionSetup;
 
 /**
@@ -55,13 +54,11 @@ public abstract class GameSession {
      * 
      * @param sessionSetup
      *            The settings of the game session.
-     * @param matchData
-     *            A snapshot of the game.
      * @param localPlayerId
      *            The {@linkplain PlayerComponent#getUserID() id} of the local
      *            player.
      */
-    public void init(GameSessionSetup sessionSetup, FullSnapshot matchData, short localPlayerId) {
+    public void init(GameSessionSetup sessionSetup, short localPlayerId) {
         this.setup = sessionSetup;
 
         // TODO mit Hilfe der matchData das Spiel aufsetzen, d.h. alle Entities
@@ -105,7 +102,7 @@ public abstract class GameSession {
         // spriteRenderSystem.process();
     }
 
-    public void renderDebug(PerspectiveCamera debugCamersa) {
+    public void renderDebug(PerspectiveCamera debugCamera) {
         // debugRenderSystem.render(physicsWorld,
         // debugCamera.combined.scl(PositionConverter.toPixels(1)));
     }
