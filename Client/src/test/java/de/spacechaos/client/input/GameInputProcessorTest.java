@@ -75,11 +75,11 @@ public class GameInputProcessorTest {
 
         // SPACE (*)
         in.keyDown(Input.Keys.SPACE);
-        assertNotEquals(in.isSpaceJustPressed(), in.isSpacePressed());
+        assertNotEquals(in.isSpaceJustPressed(), in.isSpaceJustPressed());
 
         // ESCAPE (*)
         in.keyDown(Input.Keys.ESCAPE);
-        assertNotEquals(in.isEscapeJustPressed(), in.isEscapePressed());
+        assertNotEquals(in.isEscapeJustPressed(), in.isEscapeJustPressed());
 
         // LEFT MOUSE
         assertTrue(!in.touchDown(0, 0, 0, Input.Buttons.LEFT));
@@ -95,17 +95,20 @@ public class GameInputProcessorTest {
 
         // LEFT MOUSE (*)
         in.touchDown(0, 0, 0, Input.Buttons.LEFT);
-        assertNotEquals(in.isLeftMouseButtonJustPressed(), in.isLeftMouseButtonPressed());
+        assertNotEquals(in.isLeftMouseButtonJustPressed(), in.isLeftMouseButtonJustPressed());
 
         // RIGHT MOUSE (*)
         in.touchDown(0, 0, 0, Input.Buttons.RIGHT);
-        assertNotEquals(in.isRightMouseButtonJustPressed(), in.isRightMouseButtonPressed());
+        assertNotEquals(in.isRightMouseButtonJustPressed(), in.isRightMouseButtonJustPressed());
 
         // SCROLL
         final int scrollAmount = 15;
         in.scrolled(scrollAmount);
         assertEquals(scrollAmount, in.getAmountJustScrolled());
         assertEquals(0, in.getAmountScrolled());
+
+        // MISC
+        assertEquals(in.mouseMoved(1, 2), in.touchDragged(1, 2, 3));
 
     }
 
