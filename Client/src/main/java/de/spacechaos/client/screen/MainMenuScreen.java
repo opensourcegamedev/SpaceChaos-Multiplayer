@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextTooltip;
 
 import net.dermetfan.gdx.assets.AnnotationAssetManager.Asset;
 
@@ -43,7 +44,6 @@ public class MainMenuScreen extends BaseUIScreen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 clickSound.play(1F);
 
-                // Gdx.app.exit();
                 return true;
             }
         });
@@ -61,10 +61,8 @@ public class MainMenuScreen extends BaseUIScreen {
 
         Image logoImage = new Image((Texture) assetManager.get(LOGO_IMAGE_PATH));
 
-        /*
-         * multiplayerButton .addListener(new TextTooltip("You can press this",
-         * skin));
-         */
+        multiplayerButton.addListener(new TextTooltip("Press to start playing", skin));
+
         mainTable.add(logoImage).padBottom(25f).padTop(-120f);
         mainTable.row();
         mainTable.add(multiplayerButton).padBottom(11f);
