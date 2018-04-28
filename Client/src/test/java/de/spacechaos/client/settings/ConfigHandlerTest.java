@@ -1,6 +1,7 @@
 package de.spacechaos.client.settings;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -8,6 +9,8 @@ import org.junit.Test;
 import de.spacechaos.client.GameUnitTest;
 import de.spacechaos.client.setting.ConfigHandler;
 import de.spacechaos.client.setting.GameSettings;
+
+import java.io.File;
 
 /**
  * Tests the {@link ConfigHandler} class.
@@ -52,6 +55,9 @@ public class ConfigHandlerTest extends GameUnitTest {
 
     }
 
+    /**
+     * Checks the ConfigHandler with existing keys
+     */
     @Test
     public void testDefaults() {
         final float floatValue = 2;
@@ -71,5 +77,36 @@ public class ConfigHandlerTest extends GameUnitTest {
         assertEquals(floatValue, cfg.getFloat(floatKey, floatValue * 2), 0);
         assertEquals(intValue, cfg.getInt(intKey, intValue * 2));
         assertEquals(stringValue, cfg.getString(stringKey, stringValue + "abc"));
+    }
+
+    /**
+     * Tests the ConfigHandler without existing keys.
+     */
+    @Test
+    public void testWithoutValues(){
+        final float floatValue = 2;
+        final int intValue = 3;
+        final String stringValue = "4";
+
+        final String floatKey = "aa";
+        final String intKey = "bb";
+        final String stringKey = "cc";
+
+        ConfigHandler cfg = new ConfigHandler("ABC");
+
+        assertEquals(floatValue, cfg.getFloat(floatKey, floatValue), 0);
+        assertEquals(intValue, cfg.getInt(intKey, intValue));
+        assertEquals(stringValue, cfg.getString(stringKey, stringValue));
+
+        assertEquals(floatValue, cfg.getFloat(floatKey, floatValue * 2), 0);
+        assertEquals(intValue, cfg.getInt(intKey, intValue * 2));
+        assertEquals(stringValue, cfg.getString(stringKey, stringValue + "abc"));
+
+        // delete created preferences
+        String path = System.getProperty("user.home") + "\\.prefs\\ABC";
+        File file = new File(path);
+        if(!file.delete()){
+            System.err.println("Couldn't delete preferences.");
+        }
     }
 }
