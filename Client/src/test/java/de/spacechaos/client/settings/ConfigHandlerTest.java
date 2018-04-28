@@ -1,9 +1,5 @@
 package de.spacechaos.client.settings;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 import de.spacechaos.client.GameUnitTest;
@@ -11,6 +7,8 @@ import de.spacechaos.client.setting.ConfigHandler;
 import de.spacechaos.client.setting.GameSettings;
 
 import java.io.File;
+
+import static org.junit.Assert.*;
 
 /**
  * Tests the {@link ConfigHandler} class.
@@ -106,6 +104,7 @@ public class ConfigHandlerTest extends GameUnitTest {
         String path = System.getProperty("user.home") + "\\.prefs\\ABC";
         File file = new File(path);
         if(!file.delete()){
+            fail();
             System.err.println("Couldn't delete preferences.");
         }
     }

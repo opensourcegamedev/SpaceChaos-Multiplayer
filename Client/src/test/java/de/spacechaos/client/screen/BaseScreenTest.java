@@ -12,9 +12,11 @@ import de.spacechaos.client.GameUnitTest;
  */
 public class BaseScreenTest extends GameUnitTest {
 
-    protected void testBasicStuff(BaseScreen s) {
+    private void testBasicStuff(BaseScreen s) {
         s.pause();
         s.resume();
+
+        s.init(null, null);
         
         s.finishLoading();
         assertTrue(s.isLoaded());
