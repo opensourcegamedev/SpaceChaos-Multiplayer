@@ -1,19 +1,13 @@
 package de.spacechaos.client.util;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-
-import java.io.*;
-
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-
-import com.badlogic.gdx.graphics.Color;
-
 import de.spacechaos.client.GameUnitTest;
-import de.spacechaos.client.data.DataStore;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link CrashLogUtils} class.
