@@ -1,14 +1,13 @@
 package de.spacechaos.client.settings;
 
-import org.junit.Test;
-
 import de.spacechaos.client.GameUnitTest;
 import de.spacechaos.client.setting.ConfigHandler;
-import de.spacechaos.client.setting.GameSettings;
+import org.junit.Test;
 
 import java.io.File;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link ConfigHandler} class.
@@ -17,12 +16,12 @@ public class ConfigHandlerTest extends GameUnitTest {
 
     @Test(expected = NullPointerException.class)
     public void testNPE() {
-        ConfigHandler cfg1 = new ConfigHandler(null);
+        new ConfigHandler(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testIAE() {
-        ConfigHandler cfg2 = new ConfigHandler("");
+        new ConfigHandler("");
     }
 
     @Test

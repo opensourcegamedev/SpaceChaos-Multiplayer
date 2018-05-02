@@ -48,8 +48,14 @@ public class CrashLogUtils {
             Gdx.app.error("SpaceChaos", "An error occurred saving the crash log", e);
         }
 
-        if (forceExit)
-            throw new RuntimeException("ForceExit set to true");
+        if (forceExit){
+            throw new ForceExit("boolean forceExit set to true");
+        }
     }
 
+    public static class ForceExit extends RuntimeException{
+        public ForceExit(String message){
+            super(message);
+        }
+    }
 }

@@ -27,7 +27,7 @@ public class CrashLogUtilsTest extends GameUnitTest {
         assertTrue(CrashLogUtils.CRASH_LOG_FILE.exists());
     }
 
-    @Test(expected =  RuntimeException.class)
+    @Test(expected =  CrashLogUtils.ForceExit.class)
     public void testForceExit(){
         CrashLogUtils.writeCrashLogToFile(new NullPointerException("test"), true);
     }
@@ -40,5 +40,10 @@ public class CrashLogUtilsTest extends GameUnitTest {
             System.err.println("Test failed");
         }
         CrashLogUtils.writeCrashLogToFile(new NullPointerException("test"), false);
+    }
+
+    @Test
+    public void testForceExitException(){
+        new CrashLogUtils.ForceExit("Test message");
     }
 }
