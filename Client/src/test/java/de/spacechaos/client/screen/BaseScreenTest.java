@@ -2,6 +2,8 @@ package de.spacechaos.client.screen;
 
 import static org.junit.Assert.assertTrue;
 
+import de.spacechaos.client.core.SpaceChaosMultiplayerGame;
+import net.dermetfan.gdx.assets.AnnotationAssetManager;
 import org.junit.Test;
 
 import de.spacechaos.client.GameUnitTest;
@@ -16,7 +18,7 @@ public class BaseScreenTest extends GameUnitTest {
         s.pause();
         s.resume();
 
-        s.init(null, null);
+        s.init(new SpaceChaosMultiplayerGame(true, true), new AnnotationAssetManager(null));
         
         s.finishLoading();
         assertTrue(s.isLoaded());
