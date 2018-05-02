@@ -5,7 +5,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
+import java.io.*;
 
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -33,4 +33,18 @@ public class CrashLogUtilsTest extends GameUnitTest {
         assertTrue(CrashLogUtils.CRASH_LOG_FILE.exists());
     }
 
+    @Test(expected =  RuntimeException.class)
+    public void testForceExit(){
+        CrashLogUtils.writeCrashLogToFile(new NullPointerException("test"), true);
+    }
+
+    @Test
+    public void testIOException() {
+        try {
+            new RandomAccessFile(CrashLogUtils.CRASH_LOG_FILE, "rw").getChannel().lock();
+        } catch (IOException e) {
+            System.err.println("Test failed");
+        }
+        CrashLogUtils.writeCrashLogToFile(new NullPointerException("test"), false);
+    }
 }

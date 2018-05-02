@@ -1,12 +1,11 @@
 package de.spacechaos.client.util;
 
+import com.badlogic.gdx.Gdx;
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
-
-import org.apache.commons.io.FileUtils;
-
-import com.badlogic.gdx.Gdx;
 
 /**
  * This class holds utility methods for dealing with crash logs.
@@ -19,8 +18,7 @@ public class CrashLogUtils {
     private static final Charset CHARSET = Charset.isSupported("UTF-8") ? Charset.forName("UTF-8")
             : Charset.defaultCharset();
 
-    private CrashLogUtils() {
-    }
+    private CrashLogUtils() {}
 
     /**
      * Writes a crash log to the {@linkplain #CRASH_LOG_FILE crash log file}.
@@ -51,7 +49,7 @@ public class CrashLogUtils {
         }
 
         if (forceExit)
-            System.exit(-1);
+            throw new RuntimeException();
     }
 
 }
