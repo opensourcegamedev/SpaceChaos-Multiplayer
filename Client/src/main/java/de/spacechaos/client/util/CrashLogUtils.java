@@ -49,7 +49,7 @@ public class CrashLogUtils {
         }
 
         if (forceExit)
-            throw new RuntimeException();
+            throw new RuntimeException("ForceExit set to true");
     }
 
 }
