@@ -13,15 +13,30 @@ public class SpaceChaosMultiplayerGameTest extends GameUnitTest {
 
     @Test
     public void baseTest(){
-//        BaseScreen screen = new LoadingScreen();      -> we can't create screens yet due to missing resources
+        BaseScreen screen = new BaseScreen() {
+            @Override
+            protected void onInit() {}
+
+            @Override
+            public void show() {}
+
+            @Override
+            public void render(float v) {}
+
+            @Override
+            public void hide() {}
+
+            @Override
+            public void dispose() {}
+        };
         boolean debug = true;
 
         SpaceChaosMultiplayerGame game = new SpaceChaosMultiplayerGame(debug, true);
-//        game.addScreen("test_screen", screen);
-//        game.pushScreen("test_screen");
-//        screen.finishLoading();
-//        game.pushScreen("test_screen");
-//        Assert.assertEquals(screen, game.getScreen("test_screen"));
+        game.addScreen("test_screen", screen);
+        game.pushScreen("test_screen");
+        screen.finishLoading();
+        game.pushScreen("test_screen");
+        Assert.assertEquals(screen, game.getScreen("test_screen"));
 
         Assert.assertEquals(debug, game.showDebugStuff());
     }
