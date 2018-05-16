@@ -7,6 +7,7 @@
 [![Technical Debt Rating](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![JUnit Tests Rating](https://sonarcloud.io/api/badges/measure?key=com.jukusoft.mmo%3Ammorpg-client&metric=test_success_density)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
 [![Security Rating](https://sonarcloud.io/api/badges/measure?key=de.spacechaos%3Aspacechaos-multiplayer&metric=new_security_rating)](https://sonarcloud.io/dashboard/index/de.spacechaos%3Aspacechaos-multiplayer) 
+[![codecov](https://codecov.io/gh/opensourcegamedev/SpaceChaos-Multiplayer/branch/master/graph/badge.svg)](https://codecov.io/gh/opensourcegamedev/SpaceChaos-Multiplayer)
 
 
 Im Rahmen dieses Projekts wollen wir einen Multiplayer-Modus für unser [voriges Projekt](https://github.com/opensourcegamedev/SpaceChaos) entwickeln.  Dabei ist der Weg das Ziel - wir entwickeln das Projekt hauptsächlich, um uns mit verschiedenen Programmieransätzen und Problematiken auseinanderzusetzen.
