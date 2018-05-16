@@ -41,10 +41,6 @@ public class SpaceChaosMultiplayerGameTest extends GameUnitTest {
     @Test
     public void testRestMethods(){
         Skin skin = new Skin();
-        GameSession session = new GameSession() {
-            @Override
-            public void init(GameSessionSetup sessionSetup, short localPlayerId) { }
-        };
 
         SpaceChaosMultiplayerGame game = new SpaceChaosMultiplayerGame(true, true);
 
@@ -61,11 +57,6 @@ public class SpaceChaosMultiplayerGameTest extends GameUnitTest {
         game.getSpriteBatch();
         game.getViewportWidth();
         game.getViewportHeight();
-
-        game.setCurrentSession(session);
-        Assert.assertEquals(session, game.getCurrentSession());
-        game.setCurrentSession(null);
-        Assert.assertNull(game.getCurrentSession());
 
         game.getEventBus();
         game.getInputMultiplexer();
