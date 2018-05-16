@@ -1,12 +1,8 @@
 package de.spacechaos.client.input;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
-import com.badlogic.gdx.Input;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link DefaultInputProcessor} class.

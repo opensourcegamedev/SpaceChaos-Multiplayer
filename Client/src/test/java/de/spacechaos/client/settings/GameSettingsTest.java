@@ -1,12 +1,10 @@
 package de.spacechaos.client.settings;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-
 import de.spacechaos.client.GameUnitTest;
+import de.spacechaos.client.setting.GameSettings;
 import org.junit.Test;
 
-import de.spacechaos.client.setting.GameSettings;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the {@link GameSettings} class.

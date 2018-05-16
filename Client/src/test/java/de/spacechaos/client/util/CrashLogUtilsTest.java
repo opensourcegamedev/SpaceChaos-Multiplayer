@@ -42,8 +42,8 @@ public class CrashLogUtilsTest extends GameUnitTest {
         CrashLogUtils.writeCrashLogToFile(new NullPointerException("test"), false);
     }
 
-    @Test
+    @Test(expected = CrashLogUtils.ForceExit.class)
     public void testForceExitException(){
-        new CrashLogUtils.ForceExit("Test message");
+        throw new CrashLogUtils.ForceExit("Test message");
     }
 }

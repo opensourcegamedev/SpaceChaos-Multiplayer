@@ -1,15 +1,9 @@
 package de.spacechaos.client.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
+import com.badlogic.gdx.math.Vector2;
 import org.junit.Test;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.Vector2;
-
-import de.spacechaos.client.data.DataStore;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the {@link PositionConverter} class.

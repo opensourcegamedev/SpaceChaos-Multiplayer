@@ -49,12 +49,12 @@ public class CrashLogUtils {
         }
 
         if (forceExit){
-            throw new ForceExit("boolean forceExit set to true");
+            throw new ForceExit("Boolean forceExit set to true");
         }
     }
 
-    public static class ForceExit extends RuntimeException{
-        public ForceExit(String message){
+    static class ForceExit extends RuntimeException{
+        ForceExit(String message){
             super(message);
         }
     }

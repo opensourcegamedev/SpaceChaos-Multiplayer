@@ -1,15 +1,11 @@
 package de.spacechaos.client.data;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-
-import org.junit.Test;
-
-import de.spacechaos.client.data.DataStore;
-import de.spacechaos.client.data.GameMap;
-import de.spacechaos.client.data.GameSessionSetup;
 import de.spacechaos.client.data.GameSessionSetup.GameDifficulty;
 import de.spacechaos.client.data.GameSessionSetup.GameMode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests the {@link GameSessionSetup} class.

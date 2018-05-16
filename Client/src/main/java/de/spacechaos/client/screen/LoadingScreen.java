@@ -38,7 +38,7 @@ public class LoadingScreen extends BaseScreen {
         FreeTypeFontLoaderParameter font = new FreeTypeFontLoaderParameter();
         font.fontFileName = "fonts/AlemdraSC/AlmendraSC-Regular.ttf";
         font.fontParameters.size = 19;
-        return new AssetDescriptor<BitmapFont>("mainFont19.ttf", BitmapFont.class, font);
+        return new AssetDescriptor<>("mainFont19.ttf", BitmapFont.class, font);
     }
 
     private static final String SKIN_PATH = "ui/skin/skin.json";
