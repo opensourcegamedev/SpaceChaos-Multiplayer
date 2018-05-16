@@ -42,7 +42,7 @@ import net.dermetfan.gdx.assets.AnnotationAssetManager;
  */
 public class SpaceChaosMultiplayerGame extends Game {
 
-    protected SpriteBatch batch;
+    private SpriteBatch batch;
     /**
      * The asset manager.
      */
