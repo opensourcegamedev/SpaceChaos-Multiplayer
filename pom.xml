@@ -13,6 +13,7 @@
 		<module>Server</module>
 		<module>LobbyServer</module>
 		<module>Desktop</module>
+		<module>Launcher</module>
 	</modules>
 
 	<name>spacechaos-multiplayer</name>
