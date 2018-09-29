@@ -43,17 +43,31 @@ public class Register {
     private void startRegistration(){
         //validate username TODO check precisely
         if("".equals(name.getText())){
-            nameError.setText("Please enter your username.");
+            nameError.setText("Please enter a username.");
         }else{
-            nameError.setText("Name not yet used.");
+            nameError.setText("");
         }
         //validate email TODO check precisely
         if("".equals(email.getText())){
             emailError.setText("Please enter your email.");
         }else if(!email.getText().contains("@")){
             emailError.setText("Not a valid email.");
+        }else{
+            emailError.setText("");
         }
-        //TODO validate password
-        //TODO validate confirmation
+        //validate password TODO check precisely
+        if("".equals(password.getText())){
+            passwordError.setText("Please enter a password.");
+        }else{
+            passwordError.setText("");
+        }
+        //validate confirmation TODO check precisely
+        if("".equals(confirm.getText())){
+            confirmError.setText("Please enter your password again.");
+        }else if(!confirm.getText().equals(password.getText())){
+            confirmError.setText("Passwords are not the same.");
+        }else{
+            confirmError.setText("");
+        }
     }
 }
