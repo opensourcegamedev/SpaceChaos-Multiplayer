@@ -2,6 +2,7 @@ package de.spacechaos.launcher.lobby;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -17,13 +18,42 @@ public class Register {
     private PasswordField password;
 
     @FXML
-    private PasswordField password2;
+    private PasswordField confirm;
 
     @FXML
     private Button register;
 
     @FXML
+    private Label nameError;
+
+    @FXML
+    private Label emailError;
+
+    @FXML
+    private Label passwordError;
+
+    @FXML
+    private Label confirmError;
+
+    /**
+     * This method is activated by clicking the 'Register'-Button.
+     * It reads the values of the different fields, validates them and uses them to create a new account.
+     */
+    @FXML
     private void startRegistration(){
-        System.out.println("Registrierung nicht erfolgt. Username: " + name.getText() + ", E-Mail: " + email.getText());
+        //validate username TODO check precisely
+        if("".equals(name.getText())){
+            nameError.setText("Please enter your username.");
+        }else{
+            nameError.setText("Name not yet used.");
+        }
+        //validate email TODO check precisely
+        if("".equals(email.getText())){
+            emailError.setText("Please enter your email.");
+        }else if(!email.getText().contains("@")){
+            emailError.setText("Not a valid email.");
+        }
+        //TODO validate password
+        //TODO validate confirmation
     }
 }

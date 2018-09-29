@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="815.0" prefWidth="1450.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.spacechaos.launcher.WindowController">
+<BorderPane prefHeight="815.0" prefWidth="1450.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.spacechaos.launcher.WindowController">
     <top>
         <HBox fx:id="upper_option_bar" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <Label text="SpaceChaos Multiplayer">
                 <HBox.margin>
-                    <Insets bottom="32.0" left="32.0" right="32.0" top="32.0"/>
+                    <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
                 </HBox.margin>
                 <font>
-                    <Font name="System Bold" size="24.0"/>
+                    <Font name="System Bold" size="24.0" />
                 </font>
             </Label>
         </HBox>
