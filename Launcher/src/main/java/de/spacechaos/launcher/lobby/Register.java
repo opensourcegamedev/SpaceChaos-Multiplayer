@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 
 public class Register {
 
@@ -69,5 +70,18 @@ public class Register {
         }else{
             confirmError.setText("");
         }
+        // TODO register new player
+    }
+
+    /**
+     * The initialization method adds an EventHandler to the 'Register'-Button so when it is focused and you press Enter, the registration process is started
+     */
+    @FXML
+    private void initialize(){
+        register.setOnKeyPressed(e -> {
+            if(e.getCode().equals(KeyCode.ENTER)){
+                startRegistration();
+            }
+        });
     }
 }
