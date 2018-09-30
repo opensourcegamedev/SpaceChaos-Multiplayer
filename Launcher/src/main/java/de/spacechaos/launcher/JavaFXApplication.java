@@ -24,11 +24,5 @@ public class JavaFXApplication extends Application {
         primaryStage.setScene(scene);
         stage.setResizable(false);
         stage.show();
-
-        showRegister();
-    }
-
-    private void showRegister(){
-
     }
 }
