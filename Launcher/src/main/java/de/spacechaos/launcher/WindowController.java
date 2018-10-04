@@ -15,7 +15,7 @@ public class WindowController {
     public void initialize(){
         try {
             // TODO show content of welcome page according to properties
-            contentPane.getChildren().add(new FXMLLoader(getClass().getResource("/fxml/login.fxml")).load());
+            contentPane.getChildren().add(new FXMLLoader(getClass().getResource("/fxml/profile_overview.fxml")).load());
         } catch (IOException e) {
             e.printStackTrace();
         }

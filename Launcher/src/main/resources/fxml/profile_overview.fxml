@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.spacechaos.launcher.lobby.ProfileOverview">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Displayed Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Account Age:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Matches played:" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Matches won:" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="W/L-Ratio:" GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Kills:" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Deaths:" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ageLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="playedLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="wonLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="wlRatioLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="killsLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="deathsLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="displayedName" promptText="Displayed Name" GridPane.columnIndex="2">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="saveNameButton" mnemonicParsing="false" onAction="#saveName" text="Save" GridPane.columnIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="nameErrorLabel" minWidth="100.0" textFill="RED" GridPane.columnIndex="4">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="K/D-Ratio:" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="kdRatioLabel" minWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="50.0" left="100.0" right="100.0" top="50.0" />
+   </padding>
+</GridPane>
